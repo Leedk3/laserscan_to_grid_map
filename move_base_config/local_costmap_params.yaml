@@ -1,0 +1,19 @@
+local_costmap:
+  global_frame: base_footprint #odom
+# robot_base_frame: base_link
+#  robot_base_frame: base_link
+  robot_base_frame: velodyne #base_footprint
+
+  update_frequency: 10.0
+  publish_frequency: 5.0
+  transform_tolerance: 1.2 #0.5  
+
+  static_map: false  
+  rolling_window: true
+  width: 50
+  height: 50
+  resolution: 0.1
+  plugins:
+     - {name: obstacles_laser,                  type: "costmap_2d::ObstacleLayer"}
+     - {name: inflation,                        type: "costmap_2d::InflationLayer"}
+  
